@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Restaurant-Vitoshi-react/static/css/main.1432fef1.css",
-    "main.js": "/Restaurant-Vitoshi-react/static/js/main.60a52bd2.js",
+    "main.css": "/Restaurant-Vitoshi-react/static/css/main.5ed81b8e.css",
+    "main.js": "/Restaurant-Vitoshi-react/static/js/main.7576532f.js",
     "static/media/pizza.jpg": "/Restaurant-Vitoshi-react/static/media/pizza.0dbf1883d6c313debe0c.jpg",
     "static/media/DINPro.ttf": "/Restaurant-Vitoshi-react/static/media/DINPro.1b0768c360d049fff810.ttf",
     "static/media/DINPro-Medium.ttf": "/Restaurant-Vitoshi-react/static/media/DINPro-Medium.4a3f4ee8d25ffd9eb29b.ttf",
@@ -14,7 +14,6 @@
     "static/media/DINPro-Medium.woff": "/Restaurant-Vitoshi-react/static/media/DINPro-Medium.8884aedddd5a2d53cb63.woff",
     "static/media/DINPro.woff": "/Restaurant-Vitoshi-react/static/media/DINPro.1871e3d59b6b24eb537d.woff",
     "static/media/DINPro-Bold.woff": "/Restaurant-Vitoshi-react/static/media/DINPro-Bold.e77241e3cec5a2484ff2.woff",
-    "static/media/spinner.gif": "/Restaurant-Vitoshi-react/static/media/spinner.f47867421a9b099e2cea.gif",
     "static/media/Nexa-Regular.woff": "/Restaurant-Vitoshi-react/static/media/Nexa-Regular.26914a1983b686385c95.woff",
     "static/media/logo.png": "/Restaurant-Vitoshi-react/static/media/logo.c6ad94352fab9cd211de.png",
     "static/media/icon-clock.svg": "/Restaurant-Vitoshi-react/static/media/icon-clock.57826986183613f115ccd1943e745c96.svg",
@@ -28,11 +27,11 @@
     "static/media/icon-minus.svg": "/Restaurant-Vitoshi-react/static/media/icon-minus.7b1cd1f6faebbe54be62e8d3c0f3d674.svg",
     "static/media/icon-orange-arrow-left.svg": "/Restaurant-Vitoshi-react/static/media/icon-orange-arrow-left.03c5a6c036c1c40f96b9567328dfad46.svg",
     "static/media/icon-arrow-down.svg": "/Restaurant-Vitoshi-react/static/media/icon-arrow-down.ef52c91547b1a25605739b044f471cba.svg",
-    "main.1432fef1.css.map": "/Restaurant-Vitoshi-react/static/css/main.1432fef1.css.map",
-    "main.60a52bd2.js.map": "/Restaurant-Vitoshi-react/static/js/main.60a52bd2.js.map"
+    "main.5ed81b8e.css.map": "/Restaurant-Vitoshi-react/static/css/main.5ed81b8e.css.map",
+    "main.7576532f.js.map": "/Restaurant-Vitoshi-react/static/js/main.7576532f.js.map"
   },
   "entrypoints": [
-    "static/css/main.1432fef1.css",
-    "static/js/main.60a52bd2.js"
+    "static/css/main.5ed81b8e.css",
+    "static/js/main.7576532f.js"
   ]
 }
