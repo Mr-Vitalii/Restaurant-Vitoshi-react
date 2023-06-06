@@ -17,6 +17,7 @@ import { ProductPrice } from "./ProductPrice";
 import { CustomContext } from "../../../Context/Context";
 import { IconButton } from "../../../Buttons/IconButton";
 import { ProductSwiper } from "./ProductSwiper";
+import { Spinner } from "../../../Spinner/Spinner";
 
 export const Product = () => {
   const [product, setProduct] = useState({});
@@ -24,8 +25,8 @@ export const Product = () => {
   const [pizzaSize, setPizzaSize] = useState("small");
   const [productCounter, setProductCounter] = useState(1);
 
-  const { path, id } = useParams();
-  
+  const { path, id} = useParams();
+
   const navigate = useNavigate();
 
   const { increaseProductQuantity, decreaseProductQuantity } =
@@ -41,11 +42,12 @@ export const Product = () => {
   //   });
   // }, [path, id]);
 
+
   useEffect(() => {
     firebase
       .database()
       .ref()
-      .child(`${path}/${id}`)
+      .child(`${path}/${+id- 1}`)
       .once("value")
       .then((data) => setProduct(data.val()));
 
@@ -59,82 +61,92 @@ export const Product = () => {
 
   const increaseProductCounter = () => {
     setProductCounter(productCounter + 1);
-  }
+  };
   const decreaseProductCounter = () => {
-    setProductCounter(productCounter === 1 ? productCounter : productCounter - 1);
+    setProductCounter(
+      productCounter === 1 ? productCounter : productCounter - 1
+    );
   };
 
   return (
-    <div className="product">
-      <div className="product__back-button" onClick={() => navigate(-1)}>
-        <ArrowLeftIcon />
-        <span className="product__back-button-text">Назад</span>
-      </div>
-      <div className="product__content">
-        <img
-          className="product__content-img"
-          src={product.pic}
-          alt={product.name}
-        />
-        <div className="product__content-info">
-          <h2 className="product__content-title">{product.name}</h2>
-          <PizzaSize
-            className="product__content-sizes"
-            product={product}
-            setPizzaSize={setPizzaSize}
-          />
+    <div>
+      {Object.keys(product).length ? (
+        <div className="product">
+          <div className="product__back-button" onClick={() => navigate(-1)}>
+            <ArrowLeftIcon />
+            <span className="product__back-button-text">Назад</span>
+          </div>
+          <div className="product__content">
+            <img
+              className="product__content-img"
+              src={product.pic}
+              alt={product.name}
+            />
+            <div className="product__content-info">
+              <h2 className="product__content-title">{product.name}</h2>
+              <PizzaSize
+                className="product__content-sizes"
+                product={product}
+                setPizzaSize={setPizzaSize}
+              />
 
-          <div className="product__content-buy">
-            <ProductPrice product={product} pizzaSize={pizzaSize} />
-            <div className="product__content-quantity">
-              <IconButton
-                style={{ backgroundColor: "transparent" }}
-                aria-label="Відняти один"
-                onClick={() => {
-                  decreaseProductQuantity(product);
-                  decreaseProductCounter();
-                }}
-              >
-                <IconMinus width={"25px"} height={"25px"} />
-              </IconButton>
-              <span className="product__content-pay-quantity">
-                {productCounter}
-              </span>
-              <IconButton
-                aria-label="Додати один"
-                onClick={() => {
-                  increaseProductQuantity(product, pizzaSize);
-                  increaseProductCounter();
-                }}
-              >
-                <IconPlus width={"25px"} height={"25px"} />
-              </IconButton>
+              <div className="product__content-buy">
+                <ProductPrice product={product} pizzaSize={pizzaSize} />
+                <div className="product__content-quantity">
+                  <IconButton
+                    style={{ backgroundColor: "transparent" }}
+                    aria-label="Відняти один"
+                    onClick={() => {
+                      decreaseProductQuantity(product);
+                      decreaseProductCounter();
+                    }}
+                  >
+                    <IconMinus width={"25px"} height={"25px"} />
+                  </IconButton>
+                  <span className="product__content-pay-quantity">
+                    {productCounter}
+                  </span>
+                  <IconButton
+                    aria-label="Додати один"
+                    onClick={() => {
+                      increaseProductQuantity(product, pizzaSize);
+                      increaseProductCounter();
+                    }}
+                  >
+                    <IconPlus width={"25px"} height={"25px"} />
+                  </IconButton>
+                </div>
+              </div>
+
+              <div className="product__content-composition">
+                <p className="product__content-composition-title">Склад</p>
+                <p className="product__content-composition-text">
+                  {product.info}
+                </p>
+                {product.category === "sets" ||
+                product.category === "rolls" ||
+                product.category === "sushi" ? (
+                  <div>
+                    <span className="card__text">{product.pieces}</span>{" "}
+                    <span className="card__text">{product.grams}</span>
+                  </div>
+                ) : (
+                  ""
+                )}
+              </div>
+              <CardButton
+                product={product}
+                pizzaSize={pizzaSize}
+                className={"product__button"}
+              />
             </div>
           </div>
-
-          <div className="product__content-composition">
-            <p className="product__content-composition-title">Склад</p>
-            <p className="product__content-composition-text">{product.info}</p>
-            {product.category === "sets" ||
-            product.category === "rolls" ||
-            product.category === "sushi" ? (
-              <div>
-                <span className="card__text">{product.pieces}</span>{" "}
-                <span className="card__text">{product.grams}</span>
-              </div>
-            ) : (
-              ""
-            )}
-          </div>
-          <CardButton
-            product={product}
-            pizzaSize={pizzaSize}
-            className={"product__button"}
-          />
+          <h3 className="product__recommend">Рекомендуємо до цього товару</h3>
+          <ProductSwiper recommendedProduct={recommendedProduct} />
         </div>
-      </div>
-      <h3 className="product__recommend">Рекомендуємо до цього товару</h3>
-      <ProductSwiper recommendedProduct={recommendedProduct} />
+      ) : (
+        <Spinner />
+      )}
     </div>
   );
 };

@@ -20,7 +20,6 @@ export const ProductsPage = ({ productIcon, title, path }) => {
   //   );
   // }, [path]);
 
-
   useEffect(() => {
     firebase
       .database()
@@ -42,20 +41,19 @@ export const ProductsPage = ({ productIcon, title, path }) => {
         </div>
         <Sort path={path} products={products} setProducts={setProducts} />
       </div>
-
-      <div className="products__cards-container">
-        {products ? (
-          products.map((product) => (
+      {products.length ? (
+        <div className="products__cards-container">
+          {products.map((product) => (
             <ProductCard
               key={`${product.id}-${product.name}`}
               path={path}
               product={product}
             />
-          ))
-        ) : (
-          <Spinner />
-        )}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <Spinner />
+      )}
     </section>
   );
 };

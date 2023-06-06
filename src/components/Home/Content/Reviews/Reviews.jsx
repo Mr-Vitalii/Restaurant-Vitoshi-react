@@ -3,6 +3,7 @@ import "./Reviews.scss";
 // import axios from "axios";
 import firebase from "../../../../utils/fb-config";
 import { ReviewForm } from "./ReviewForm";
+import { Spinner } from "../../../Spinner/Spinner";
 
 export const Reviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -40,17 +41,21 @@ export const Reviews = () => {
           setIsShowReview={setIsShowReview}
         />
       )}
-      <ul className="reviews__list">
-        {reviews.map((review) => (
-          <li key={review.id} className="reviews__item">
-            <div className="reviews__item-header">
-              <h3 className="reviews__item-title">{review.user_name}</h3>
-              <span className="reviews__item-date">{review.user_date}</span>
-            </div>
-            <p className="reviews__item-text">{review.review}</p>
-          </li>
-        ))}
-      </ul>
+      {reviews.length ? (
+        <ul className="reviews__list">
+          {reviews.map((review) => (
+            <li key={review.id} className="reviews__item">
+              <div className="reviews__item-header">
+                <h3 className="reviews__item-title">{review.user_name}</h3>
+                <span className="reviews__item-date">{review.user_date}</span>
+              </div>
+              <p className="reviews__item-text">{review.review}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <Spinner/>
+      )}
     </div>
   );
 };
