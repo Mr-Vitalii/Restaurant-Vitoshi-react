@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Vitoshi - Japanese Restaurant Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the beautiful and immersive world of Vitoshi, a Japanese restaurant that brings together the essence of traditional cuisine and modern technology. Our website is a full-fledged project written in React, designed to offer a seamless and delightful experience for customers looking to order food from our restaurant.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+Our website is built on a robust foundation, leveraging the power of React and integrating with the Firebase database to ensure efficient and real-time data management. Here are some key features that make Vitoshi stand out:
 
-### `npm start`
+### Extensive Menu
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+With Vitoshi, exploring our diverse and tantalizing menu is a breeze. Our website allows users to easily find any dish by name, ensuring a seamless browsing experience for our customers. Whether you're craving sushi, pizza, or wok, our website has you covered.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Categorized Product Sorting
 
-### `npm test`
+At Vitoshi, we believe in providing our customers with a seamless browsing experience. Our website offers a comprehensive set of sorting options, allowing you to easily navigate through our diverse menu. You can sort products by various criteria, including name, price, quantity etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Instant Product Search
 
-### `npm run build`
+Finding a specific product on our website has never been easier. Our intuitive search feature allows you to quickly locate any dish by simply entering its name in the search box. Whether you're looking for a particular sushi roll, a specific ramen flavor, or a mouthwatering dessert, our search functionality will provide instant results, ensuring you can find what you're craving with ease.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Shopping Cart Integration
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+At Vitoshi, we understand the importance of a smooth ordering process. Our website offers a user-friendly shopping cart feature, enabling customers to effortlessly add their selected products and keep track of their order. With just a few clicks, users can customize their meal and finalize their choices.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Seamless Ordering
 
-### `npm run eject`
+Placing an order has never been more convenient. Our website allows customers to complete the ordering process by filling out a simple form. From selecting preferred delivery options to specifying any special instructions, the ordering experience at Vitoshi is designed to be hassle-free.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Telegram Integration
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+We take customer communication seriously, which is why we have integrated our website with the Telegram API. This integration ensures that data about the buyer and their ordered products is securely transmitted to the Telegram messenger. With this feature, we can provide timely updates, confirmations, and personalized assistance to our valued customers.
